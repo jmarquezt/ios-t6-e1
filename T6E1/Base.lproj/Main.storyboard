@@ -21,31 +21,57 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="432"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lg-6U-IOi">
-                                <rect key="frame" x="20" y="465" width="46" height="30"/>
+                                <rect key="frame" x="20" y="481" width="46" height="30"/>
                                 <state key="normal" title="Sepia"/>
                                 <connections>
                                     <action selector="sepiaAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QpF-vu-no3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmv-hr-lOc">
-                                <rect key="frame" x="111" y="465" width="67" height="30"/>
+                                <rect key="frame" x="111" y="481" width="67" height="30"/>
                                 <state key="normal" title="Vignette"/>
                                 <connections>
                                     <action selector="vignetteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8nh-SL-GOX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0u-ph-LQa">
-                                <rect key="frame" x="237" y="465" width="46" height="30"/>
+                                <rect key="frame" x="237" y="481" width="46" height="30"/>
                                 <state key="normal" title="Invert"/>
                                 <connections>
                                     <action selector="invertAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VWe-Vj-fTC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjk-Z9-q66">
+                                <rect key="frame" x="20" y="519" width="46" height="30"/>
+                                <state key="normal" title="Pinch"/>
+                                <connections>
+                                    <action selector="pinchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g8A-Uq-e5T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFG-r1-IQ4">
+                                <rect key="frame" x="96" y="519" width="97" height="30"/>
+                                <state key="normal" title="Perspective"/>
+                                <connections>
+                                    <action selector="perspectiveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n5L-bU-jlS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWe-TR-gf2">
+                                <rect key="frame" x="227" y="519" width="66" height="30"/>
+                                <state key="normal" title="Gaussian"/>
+                                <connections>
+                                    <action selector="gaussianAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Kv-uY-gXz"/>
+                                    <action selector="perspectiveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LTx-ok-AuD"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vc7-KP-gH7">
+                                <rect key="frame" x="18" y="440" width="277" height="31"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="EQM-2n-s9c" id="dtd-qc-CCN"/>
+                        <outlet property="slider" destination="vc7-KP-gH7" id="Jvt-wL-McA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

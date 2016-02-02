@@ -10,6 +10,52 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBAction func vignetteAction(sender: AnyObject) {
+        let inputImage = imageView.image
+        let context = CIContext(options: nil)
+        if let currentFilter = CIFilter(name: "CIVignette") {
+            let beginImage = CIImage(image: inputImage!)
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(0.8, forKey: kCIInputIntensityKey)
+            
+            if let output = currentFilter.outputImage {
+                let cgimg = context.createCGImage(output, fromRect: output.extent)
+                let processedImage = UIImage(CGImage: cgimg)
+                imageView.image = processedImage
+            }
+        }
+    }
+    @IBAction func sepiaAction(sender: AnyObject) {
+        let inputImage = imageView.image
+        let context = CIContext(options: nil)
+        if let currentFilter = CIFilter(name: "CISepiaTone") {
+            let beginImage = CIImage(image: inputImage!)
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(0.8, forKey: kCIInputIntensityKey)
+            
+            if let output = currentFilter.outputImage {
+                let cgimg = context.createCGImage(output, fromRect: output.extent)
+                let processedImage = UIImage(CGImage: cgimg)
+                imageView.image = processedImage
+            }
+        }
+    }
+    @IBAction func invertAction(sender: AnyObject) {
+        let inputImage = imageView.image
+        let context = CIContext(options: nil)
+        if let currentFilter = CIFilter(name: "CIColorInvert") {
+            currentFilter.setDefaults()
+            let beginImage = CIImage(image: inputImage!)
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            
+            if let output = currentFilter.outputImage {
+                let cgimg = context.createCGImage(output, fromRect: output.extent)
+                let processedImage = UIImage(CGImage: cgimg)
+                imageView.image = processedImage
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
